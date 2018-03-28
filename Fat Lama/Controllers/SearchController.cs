@@ -16,7 +16,7 @@ namespace Fat_Lama.Controllers
         {
             //check input values for illegal chars and to prevent SQL injection
 
-
+            
             //call database layer to perform search
             return new SearchManager().DoSearch(searchTerm, Convert.ToDouble(lat), Convert.ToDouble(lng));
 

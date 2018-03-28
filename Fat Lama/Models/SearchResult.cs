@@ -11,7 +11,6 @@ namespace Fat_Lama.Models
         //name of the item
         public string ItemName { get; set; }
 
-
         // Url of the item
         public string ItemUrl { get; set; }
 

@@ -13,7 +13,7 @@ namespace Fat_Lama.Managers
         {
             //build wild card string to query db
             itemName = '%' + itemName.Replace(" ", "%") + '%';
-
+             
             List<SearchResult> theResult = new List<SearchResult>();
 
             //Directory path to DB. It is bad practice to hardcode dir path, it should be in a config file
@@ -32,10 +32,12 @@ namespace Fat_Lama.Managers
 
                 try
                 {
+                    //read relevant rows on the db
                     SQLiteDataReader sql_dr = sql_cmd.ExecuteReader();
                     sql_dr.Read();
                     while (sql_dr.HasRows)
                     {
+                        //populate search result
                         theResult.Add(new SearchResult
                         {
                             ItemName = sql_dr[0].ToString(),
